@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Quest: Star Run</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="ig">
+<div class="wrap">
+  <section id="home">
+  <div class="scene">
+    <div class="cl" style="left:4%;top:30%;width:11%"></div>
+    <div class="cl" style="left:72%;top:36%;width:14%"></div>
+    <div class="cl" style="left:12%;top:60%;width:8%"></div>
+    <div class="mt" style="left:-8%;width:50%;height:36%;background:#5d8fc4"></div>
+    <div class="mt" style="left:30%;width:55%;height:42%;background:#7aaad6"></div>
+    <div class="mt" style="left:62%;width:50%;height:34%;background:#5d8fc4"></div>
+    <div class="haze"></div>
+    <div class="pn" style="left:2%;height:26%;background:#2a9d47"></div>
+    <div class="pn" style="left:10%;height:34%;background:#1f8f3a"></div>
+    <div class="pn" style="left:20%;height:22%;background:#3fb35a"></div>
+    <div class="pn" style="left:44%;height:20%;background:#3fb35a;opacity:.8"></div>
+    <div class="pn" style="left:55%;height:26%;background:#2a9d47;opacity:.9"></div>
+    <div class="pn" style="left:78%;height:30%;background:#2a9d47"></div>
+    <div class="pn" style="left:86%;height:42%;background:#1f8f3a;width:9%"></div>
+    <div class="bush" style="left:18%;width:7%"></div><div class="bush" style="left:50%;width:9%"></div><div class="bush" style="left:70%;width:6%"></div>
+    <div class="gr"></div>
+    <div class="sign">&#10132;</div>
+    <div class="hsh"></div><div class="ssh"></div>
+    <svg class="hero" viewBox="0 0 12 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="8" height="3" fill="#e8453c"/><rect x="1" y="2" width="9" height="1" fill="#e8453c"/><rect x="2" y="3" width="8" height="4" fill="#ffcf9e"/><rect x="7" y="4" width="1" height="2" fill="#000"/><rect x="2" y="7" width="8" height="5" fill="#2f6bff"/><rect x="8" y="7" width="2" height="5" fill="#1d46b8"/><rect x="3" y="0" width="3" height="1" fill="#ff8b80"/><rect x="5" y="8" width="2" height="2" fill="#ffd23f"/><rect x="2" y="12" width="3" height="4" fill="#5a3a1a"/><rect x="7" y="12" width="3" height="4" fill="#5a3a1a"/></svg>
+    <div class="ico"><button id="sndb" aria-label="Sound on/off">&#128266;</button><button id="setb" aria-label="Settings">&#9881;</button></div>
+    <div class="who" id="who" hidden><img id="avatar" alt="" referrerpolicy="no-referrer"><span id="wname"></span><button id="signout">SIGN OUT</button></div>
+    <div id="acct">
+      <h2>SIGN IN</h2>
+      <input id="acUser" type="text" placeholder="USERNAME" maxlength="16" autocomplete="username" autocapitalize="off" spellcheck="false" aria-label="Username">
+      <input id="acPass" type="password" placeholder="PASSWORD" maxlength="40" autocomplete="current-password" aria-label="Password">
+      <div class="acrow"><button id="acIn" class="gb">SIGN IN</button><button id="acNew" class="bb">CREATE ACCOUNT</button></div>
+      <div id="acMsg"></div>
+      <p>or</p>
+      <div id="gbtn"></div>
+      <div id="gmsg"></div>
+    </div>
+    <div id="setp" hidden>
+      <div id="setmain">
+        <h2>SETTINGS</h2>
+        <button id="s5">? HOW TO PLAY</button>
+        <button id="s1">SOUND: ON</button>
+        <button id="s2">MUSIC: ON</button>
+        <button id="s3">RESET BEST SCORE</button>
+        <button id="s7">RESET LEVEL PROGRESS</button>
+        <button id="s4" class="gb">&#10006; CLOSE</button>
+      </div>
+      <div id="how" hidden>
+        <h2>HOW TO PLAY</h2>
+        <div class="ctl">
+          <b>CONTROLS</b>
+          <div><kbd>&#9664;</kbd><kbd>&#9654;</kbd> or <kbd>A</kbd><kbd>D</kbd> = Move left / right</div>
+          <div><kbd>&#9650;</kbd> or <kbd>SPACE</kbd> = <span class="hl">JUMP</span></div>
+          <div class="sm">Tap = small hop. Hold = jump higher.</div>
+          <div class="sm"><kbd>P</kbd> or <kbd>ESC</kbd> = Menu</div>
+          <b>GOAL</b>
+          <div class="sm">Collect stars, jump on enemies, reach the flag!</div>
+          <div class="sm">Hit a ? block from below for a surprise.</div>
+        </div>
+        <button id="s6">&#9664; BACK</button>
+      </div>
+    </div>
+    <div class="ui">
+      <div class="ttl"><h2>PIXEL QUEST</h2><div class="plank">&#11088; STAR RUN &#11088;</div></div>
+      <div class="btns">
+        <button class="gb" id="hs">&#9654; NEW GAME</button>
+        <button class="bb" id="p1">LEVELS</button>
+        <button class="yb" id="hw">? HOW TO PLAY</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="lvsel" hidden>
+  <div class="lvbox">
+    <h2>SELECT A LEVEL</h2>
+    <div class="dfrow"><button class="df" data-d="0">EASY</button><button class="df" data-d="1">NORMAL</button><button class="df" data-d="2">HARD</button></div>
+    <div class="lvgrid" id="lvgrid"></div>
+    <div class="lvbar"><button id="lvback">&#9664; MAIN MENU</button><button id="lvend">&#8734; ENDLESS</button><button id="lvgo">&#9654; PLAY</button></div>
+  </div>
+</section>
+<section id="intro" hidden>
+  <div class="ibox">
+    <h2>NEW GAME</h2>
+    <div class="icols">
+      <div class="icol"><h3>ENEMIES &amp; DANGERS</h3><div class="igrid" id="ienemies"></div></div>
+      <div class="icol"><h3>MYSTERY BLOCK</h3>
+        <div class="mbhead"><canvas id="imb" width="16" height="16"></canvas><span>Jump and hit it from below to get a random surprise:</span></div>
+        <div class="igrid1" id="irewards"></div></div>
+    </div>
+    <div class="dfrow"><button class="df" data-d="0">EASY</button><button class="df" data-d="1">NORMAL</button><button class="df" data-d="2">HARD</button></div>
+    <div class="lvbar"><button id="inback">&#9664; BACK</button><button id="instart" class="gb">&#9654; START</button></div>
+  </div>
+</section>
+<div id="game" hidden>
+<div id="rot">&#8635; Turn your phone sideways for a bigger screen</div>
+<div class="stage">
+    <canvas id="c" width="320" height="176" aria-label="Game screen"></canvas>
+    <div class="hud2">
+      <div class="l"><span class="pill"><svg width="20" height="20" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="0" width="10" height="4" fill="#e8453c"/><rect x="0" y="3" width="12" height="2" fill="#e8453c"/><rect x="2" y="5" width="8" height="6" fill="#ffcf9e"/><rect x="7" y="6" width="1" height="2" fill="#000"/></svg> x <b id="li">3</b></span><span class="pill">&#11088; <b id="st">0</b></span></div>
+      <span class="pill">SCORE <b id="sc">0</b></span>
+      <span class="pill"><span id="lvl">LEVEL</span> <b id="lv">1</b><span id="lvmax">/100</span></span>
+    </div>
+    <div id="pops"></div><div id="pwr"></div>
+    <div class="ctl2">
+      <div class="dp"><button id="bl" aria-label="Left">&#9664;</button><button id="br" aria-label="Right">&#9654;</button><button id="bdn" aria-label="Down">&#9660;</button></div>
+      <button id="bj" class="jb" aria-label="Jump">&#9650;<small>JUMP</small></button>
+    </div>
+    <div class="topbtns"><button id="pz">&#9776; MENU</button></div>
+    <div id="ov"></div>
+  </div>
+</div>
+
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
